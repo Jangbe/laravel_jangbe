@@ -22,7 +22,7 @@ Sistem Manajemen Rumah Sakit dan Pasien yang dibangun dengan **Laravel 12** dan 
 -   **Frontend**: Vue 3 (Composition API)
 -   **Styling**: Tailwind CSS
 -   **Icons**: Font Awesome (Vue Component version)
--   **Language**: TypeScript & JavaScript
+-   **Language**: PHP, TypeScript & JavaScript
 
 ## 📦 Instalasi
 
@@ -58,9 +58,12 @@ Sistem Manajemen Rumah Sakit dan Pasien yang dibangun dengan **Laravel 12** dan 
 ## 📂 Struktur Penting (Frontend)
 
     resources/js/layouts/AdminLayout.vue: Kerangka utama admin dashboard.
+    resources/js/components/AnimatedNumber.vue: Komponen untuk animasi number di Dashboard.
     resources/js/components/CustomSelect.vue: Komponen custom select dengan fitur infinite scroll dan navigasi keyboard.
-    resources/js/views/RumahSakit.vue: Halaman manajemen CRUD Rumah Sakit.
-    resources/js/views/Pasien.vue: Halaman manajemen CRUD Pasien.
+    resources/js/components/Linechart.vue: Komponen statistik pasien untuk di Dashboard.
+    resources/js/pages/Dashboard.vue: Beranda interaktif.
+    resources/js/pages/RumahSakit.vue: Halaman manajemen CRUD Rumah Sakit.
+    resources/js/pages/Pasien.vue: Halaman manajemen CRUD Pasien.
 
 ## 📝 Catatan Pengembangan
 
