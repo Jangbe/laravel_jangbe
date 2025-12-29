@@ -10,6 +10,8 @@ Route::get('/me', [HomeController::class, 'me']);
 Route::group(['middleware' => 'web'], function () {
     Auth::routes();
 
+    Route::get('stat', [HomeController::class, 'stat']);
+
     Route::apiResource('hospital', HospitalController::class)->except('show');
     Route::apiResource('patient', PatientController::class)->except('show');
 });

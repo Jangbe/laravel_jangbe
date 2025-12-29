@@ -1,59 +1,103 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel - Vue 3 Management System (RS Jangbe)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistem Manajemen Rumah Sakit dan Pasien yang dibangun dengan **Laravel 12** dan **Vue 3 (Composition API)**. Project ini dikembangkan sebagai bagian dari pemenuhan _Technical Test_ untuk **PT Terakorp**.
 
-## About Laravel
+## 🚀 Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   **Admin Dashboard Layout**: Layout responsif menggunakan Tailwind CSS dengan _collapsible sidebar_ untuk penggunaan mobile.
+-    **Interactive Dashboard**: Dashboard dinamis yang menyajikan ringkasan data secara visual:
+        - **Animated Statistics**: Counter angka yang bergerak (animated numbers) untuk memberikan kesan interaktif saat halaman dimuat.
+        - **Monthly Patient Line Chart**: Visualisasi data tren pendaftaran pasien bulanan menggunakan Chart.js.
+-   **Advanced Searchable Select**: Komponen seleksi relasi data (Rumah Sakit ke Pasien) dengan fitur:
+    -   **Infinite Scroll / Lazy Loading**: Integrasi langsung dengan Laravel Paginate API.
+    -   **Live Search**: Pencarian data secara dinamis dengan _debounce_ untuk optimasi hit API.
+    -   **Keyboard Navigation**: Navigasi opsi menggunakan tombol panah (_Arrow Keys_) dan _Enter_ untuk efisiensi input.
+-   **CRUD dengan Modal**: Manajemen data Rumah Sakit menggunakan Modal yang interaktif dengan transisi halus (`Vue Transitions`).
+-   **Data Pagination**: Implementasi sinkronisasi pagination antara backend Laravel dan frontend Vue 3.
+-   **TypeScript Ready**: Penggunaan TypeScript pada komponen Vue untuk _type-safety_ yang lebih baik.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🛠️ Tech Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   **Backend**: Laravel 12
+-   **Frontend**: Vue 3 (Composition API)
+-   **Styling**: Tailwind CSS
+-   **Icons**: Font Awesome (Vue Component version)
+-   **Language**: TypeScript & JavaScript
 
-## Learning Laravel
+## 📦 Instalasi
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+1. **Clone Repository**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    ```bash
+    git clone https://github.com/Jangbe/laravel_jangbe.git
+    cd laravel_jangbe
+    ```
 
-## Laravel Sponsors
+2. **Backend Setup**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    ```bash
+    composer install
+    cp .env.example .env
+    php artisan key:generate
+    # Sesuaikan konfigurasi database di .env
+    php artisan migrate --seed
+    ```
 
-### Premium Partners
+3. **Frontend Setup**
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+    ```bash
+    npm install
+    npm run build
+    ```
 
-## Contributing
+4. **Run Server**
+    ```bash
+    php artisan serve
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 📂 Struktur Penting (Frontend)
 
-## Code of Conduct
+    resources/js/layouts/AdminLayout.vue: Kerangka utama admin dashboard.
+    resources/js/components/CustomSelect.vue: Komponen custom select dengan fitur infinite scroll dan navigasi keyboard.
+    resources/js/views/RumahSakit.vue: Halaman manajemen CRUD Rumah Sakit.
+    resources/js/views/Pasien.vue: Halaman manajemen CRUD Pasien.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 📝 Catatan Pengembangan
 
-## Security Vulnerabilities
+Dalam pengembangan ini, saya fokus pada User Experience (UX) seperti:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+-   Menghindari submit form yang tidak disengaja saat berinteraksi dengan dropdown (menggunakan .prevent modifiers).
+-   Optimasi performa API menggunakan debounce pada fitur pencarian.
+-   Memberikan feedback visual berupa loading spinner dan transisi modal yang halus.
+-   Mengintegrasikan library chart untuk memudahkan manajemen melihat tren data pasien tanpa harus membaca tabel secara manual.
+-   Implementasi animasi pada komponen statistik untuk meningkatkan kualitas User Experience dan estetika aplikasi.
 
-## License
+## 📸 Preview & Dokumentasi UI
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<div align="center">
+  <img src="public/images/login.png" width="400" alt="Login Page">
+  <p><i>Halaman Login dengan Aksen Orange yang Konsisten</i></p>
+  
+  <br>
+
+  <img src="public/images/dashboard.png" width="400" alt="Dashboard Interaktif">
+  <p><i>Halaman ringkasan data yang dilengkapi dengan fitur <b>Animated Numbers</b> dan <b>Line Chart</b> untuk memantau tren pendaftaran pasien secara visual.</i></p>
+
+  <br>
+
+  <img src="public/images/manajemen-data.png" width="400" alt="Manajemen Data & Pagination">
+  <p><i>Pengelolaan data Rumah Sakit menggunakan tabel responsif yang terintegrasi dengan sistem <b>Server-side Pagination</b> dari Laravel.</i></p>
+  
+  <br>
+  
+  <img src="public/images/form.png" width="400" alt="Advanced Form & Searchable Select">
+  <p><i>Formulir input di dalam Modal yang menggunakan komponen <b>Custom Select</b> dengan fitur <b>Infinite Scroll</b>, <b>Live Search</b>, dan navigasi keyboard.</i></p>
+</div>
+
+
+
+---
+
+<div align="center">
+Dikembangkan dengan ❤️ oleh <b>Devi Mulyana</b> untuk <b>PT Terakorp Indonesia Recruitment Team</b>.
+</div>

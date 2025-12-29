@@ -16,6 +16,7 @@
         "@vitejs/plugin-vue": "*",
         "@vue/tsconfig": "^0.8.1",
         "axios": "^1.11.0",
+        "chart.js": "^4.5.1",
         "concurrently": "^9.0.1",
         "debounce": "^3.0.0",
         "laravel-vite-plugin": "^2.0.0",
@@ -24,6 +25,7 @@
         "typescript": "^5.9.3",
         "vite": "^7.0.7",
         "vue": "^3.2.37",
+        "vue-chartjs": "^5.3.3",
         "vue-router": "^4.6.4",
         "vue-tsc": "^3.2.1"
     }

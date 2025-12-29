@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { faArrowRightFromBracket, faHeart, faHospital, faUserInjured } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightFromBracket, faDashboard, faHeart, faHospital, faUserInjured } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { useRouter } from 'vue-router';
 import { useAuth } from '@/composables/auth';
@@ -25,6 +25,13 @@ const logout = async () => {
             </div>
 
             <nav class="mt-6 px-4 space-y-2">
+                <router-link to="/"
+                    class="flex items-center px-4 py-3 rounded-xl transition-all group [&:not(.router-link-exact-active)]:hover:bg-white/10"
+                    exact-active-class="laravel-gradient text-white shadow-lg shadow-orange-500/30">
+                    <font-awesome-icon :icon="faDashboard" class="mr-3" />
+                    <span class="font-medium text-sm">Beranda</span>
+                </router-link>
+
                 <router-link to="/rumah-sakit"
                     class="flex items-center px-4 py-3 rounded-xl transition-all group [&:not(.router-link-exact-active)]:hover:bg-white/10"
                     active-class="laravel-gradient text-white shadow-lg shadow-orange-500/30">

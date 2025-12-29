@@ -6,7 +6,7 @@ export const routes = createRouter({
     routes: [
         {
             path: '/login',
-            component: () => import('./pages/auth/login.vue'),
+            component: () => import('./pages/auth/Login.vue'),
             beforeEnter: async (to, from, next) => {
                 const auth = useAuth()
                 await auth.me()
@@ -32,7 +32,7 @@ export const routes = createRouter({
             children: [
                 {
                     path: '',
-                    redirect: 'rumah-sakit'
+                    component: () => import('./pages/Dashboard.vue')
                 },
                 {
                     path: 'rumah-sakit',
@@ -43,6 +43,10 @@ export const routes = createRouter({
                     component: () => import('./pages/Pasien.vue')
                 },
             ]
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            component: () => import('./pages/NotFound.vue')
         }
     ]
 })
