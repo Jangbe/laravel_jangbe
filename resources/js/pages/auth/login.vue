@@ -71,7 +71,7 @@ const handleSubmit = async (e: Event) => {
                         <FontAwesomeIcon :icon="faFire" class="text-white text-2xl" />
                     </div>
                 </div>
-                <h1 class="text-3xl font-bold text-gray-800">RS Jangbe</h1>
+                <h1 class="text-3xl font-bold text-gray-800">RS <span class="text-orange-600">Jangbe</span></h1>
                 <p class="text-gray-600 mt-2">Silakan login untuk melanjutkan</p>
             </div>
 
@@ -165,9 +165,3 @@ const handleSubmit = async (e: Event) => {
         
     </div>
 </template>
-
-<style scoped>
-.laravel-gradient {
-    background: linear-gradient(135deg, #f97316 0%, #ef4444 50%, #ec4899 100%);
-}
-</style>

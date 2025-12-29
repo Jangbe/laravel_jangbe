@@ -28,11 +28,20 @@ export const routes = createRouter({
                 }
                 return next('/login')
             },
+            component: () => import('./layouts/AdminLayout.vue'),
             children: [
                 {
                     path: '',
-                    component: () => import('./pages/hospital.vue')
-                }
+                    redirect: 'rumah-sakit'
+                },
+                {
+                    path: 'rumah-sakit',
+                    component: () => import('./pages/RumahSakit.vue')
+                },
+                {
+                    path: 'pasien',
+                    component: () => import('./pages/Pasien.vue')
+                },
             ]
         }
     ]

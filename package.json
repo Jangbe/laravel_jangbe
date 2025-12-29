@@ -17,6 +17,7 @@
         "@vue/tsconfig": "^0.8.1",
         "axios": "^1.11.0",
         "concurrently": "^9.0.1",
+        "debounce": "^3.0.0",
         "laravel-vite-plugin": "^2.0.0",
         "sass": "^1.56.1",
         "tailwindcss": "^4.1.18",

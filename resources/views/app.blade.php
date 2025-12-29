@@ -13,7 +13,7 @@
         <!-- Styles / Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.ts'])
     </head>
-    <body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
-        <div id="app"></div>
+    <body class="bg-gray-100 min-h-screen flex items-center justify-center">
+        <div id="app" class="w-full"></div>
     </body>
 </html>

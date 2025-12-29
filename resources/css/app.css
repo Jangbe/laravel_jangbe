@@ -9,3 +9,7 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+.laravel-gradient {
+    background: linear-gradient(135deg, #f97316 0%, #ef4444 50%, #ec4899 100%);
+}
